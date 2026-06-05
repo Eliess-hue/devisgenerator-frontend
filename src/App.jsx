@@ -6,6 +6,7 @@ import DashboardPage from './pages/DashboardPage'
 import ClientsPage from './pages/ClientsPage'
 import QuotesPage from './pages/QuotesPage'
 import QuoteDetailPage from './pages/QuoteDetailPage'
+import Layout from "./components/Layout.jsx";
 
 function PrivateRoute({ children }) {
     const { token } = useAuth()
@@ -18,10 +19,12 @@ function AppRoutes() {
             <Routes>
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/register" element={<RegisterPage />} />
-                <Route path="/dashboard" element={<PrivateRoute><DashboardPage /></PrivateRoute>} />
-                <Route path="/clients" element={<PrivateRoute><ClientsPage /></PrivateRoute>} />
-                <Route path="/quotes" element={<PrivateRoute><QuotesPage /></PrivateRoute>} />
-                <Route path="/quotes/:id" element={<PrivateRoute><QuoteDetailPage /></PrivateRoute>} />
+                <Route element={<PrivateRoute><Layout /></PrivateRoute>}>
+                    <Route path="/dashboard" element={<DashboardPage />} />
+                    <Route path="/clients" element={<ClientsPage />} />
+                    <Route path="/quotes" element={<QuotesPage />} />
+                    <Route path="/quotes/:id" element={<QuoteDetailPage />} />
+                </Route>
                 <Route path="*" element={<Navigate to="/login" />} />
             </Routes>
         </BrowserRouter>

@@ -4,7 +4,7 @@ import { useAuth } from '../context/AuthContext'
 import { login } from '../api/apiClient'
 
 export default function LoginPage() {
-    const { saveToken } = useAuth()
+    const { saveAuth } = useAuth()
     const navigate = useNavigate()
     const location = useLocation()
 
@@ -19,6 +19,8 @@ export default function LoginPage() {
     const [successMessage, setSuccessMessage] = useState(
         location.state?.message || null
     )
+
+    //const response = await login(username, password)
 
     useEffect(() => {
 
@@ -91,7 +93,10 @@ export default function LoginPage() {
 
         try {
             const response = await login(username, password)
-            saveToken(response.data.token)
+
+            saveAuth(response.data.token,
+                username)
+
             navigate('/dashboard')
 
         } catch (err) {
