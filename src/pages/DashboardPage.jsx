@@ -11,16 +11,8 @@ export default function DashboardPage() {
     }
 
     return (
-        <div className="min-h-screen bg-base-100 p-8">
-            <div className="flex justify-between items-center">
-                <h1 className="text-2xl font-bold text-base-content">Dashboard</h1>
-                <button
-                    onClick={handleLogout}
-                    className="btn btn-outline btn-error rounded-lg"
-                >
-                    Se déconnecter
-                </button>
+            <div>
+                Dashboard
             </div>
-        </div>
     )
 }
