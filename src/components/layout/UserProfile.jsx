@@ -3,9 +3,7 @@ import { useAuth } from '../../context/AuthContext'
 
 export default function UserProfile() {
 
-    const { username } = useAuth()
-
-    const { logout } = useAuth()
+    const { username, logout } = useAuth()
 
     const navigate = useNavigate()
 
