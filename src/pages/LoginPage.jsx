@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, Link, useLocation } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
-import { login } from '../api/apiClient'
+import { login } from '../api/apiAuth.js'
 
 export default function LoginPage() {
     const { saveAuth } = useAuth()

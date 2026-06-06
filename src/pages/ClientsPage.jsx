@@ -5,7 +5,7 @@ import {
     createClient,
     updateClient,
     deleteClient
-} from '../api/apiClient'
+} from '../api/apiClient.js'
 
 import ClientModal from '../components/ClientModal'
 import ClientTable from '../components/ClientTable'
