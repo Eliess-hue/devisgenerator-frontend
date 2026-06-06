@@ -4,8 +4,6 @@ import UserProfile from './UserProfile'
 
 export default function Sidebar() {
 
-
-
     return (
 
         <aside className="w-64 bg-base-200 border-r border-base-300 flex flex-col">
