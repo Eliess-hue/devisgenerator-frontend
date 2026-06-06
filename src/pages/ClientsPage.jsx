@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { useAuth } from '../context/AuthContext'
 
 import {
     getClients,
@@ -15,9 +13,6 @@ import ClientTable from '../components/ClientTable'
 export default function ClientsPage() {
 
 
-const { logout } = useAuth()
-const navigate = useNavigate()
-
 const [clients, setClients] = useState([])
 const [isModalOpen, setIsModalOpen] = useState(false)
 
@@ -30,11 +25,6 @@ const [address, setAddress] = useState('')
 
 const [search, setSearch] = useState('')
 const [error, setError] = useState(null)
-
-const handleLogout = () => {
-    logout()
-    navigate('/login')
-}
 
 const filteredClients = clients.filter(
     client =>
@@ -219,13 +209,6 @@ return (
                     <span>{error}</span>
                 </div>
             )}
-
-            <button
-                onClick={handleLogout}
-                className="btn btn-outline btn-error rounded-lg"
-            >
-                Se déconnecter
-            </button>
 
             <div className="flex items-center justify-between">
 
