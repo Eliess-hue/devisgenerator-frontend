@@ -1,25 +1,10 @@
-import {
-    NavLink,
-    useNavigate
-} from 'react-router-dom'
-
-import { useAuth } from '../../context/AuthContext'
+import {NavLink} from 'react-router-dom'
 
 import UserProfile from './UserProfile'
 
 export default function Sidebar() {
 
-    const { logout } = useAuth()
 
-    const navigate = useNavigate()
-
-    const handleLogout = () => {
-
-        logout()
-
-        navigate('/login')
-
-    }
 
     return (
 
@@ -79,18 +64,6 @@ export default function Sidebar() {
                 </NavLink>
 
             </nav>
-
-            {/* Déconnexion */}
-            <div className="px-4 pb-4">
-
-                <button
-                    onClick={handleLogout}
-                    className="btn btn-outline btn-error w-full rounded-lg"
-                >
-                    Se déconnecter
-                </button>
-
-            </div>
 
             {/* Profil */}
             <div className="p-4 border-t border-base-300">
