@@ -34,3 +34,6 @@ export const addQuoteLine = (quoteId, line) =>
 
 export const deleteQuoteLine = (quoteId, lineId) =>
     axiosConfig.delete(`/api/quotes/${quoteId}/lines/${lineId}`)
+
+export const getQuoteById = (id) =>
+    axiosConfig.get(`/api/quotes/${id}`)
