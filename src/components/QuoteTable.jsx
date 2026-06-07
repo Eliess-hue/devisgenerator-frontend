@@ -1,11 +1,14 @@
 import QuoteStatusBadge
     from './QuoteStatusBadge'
+import {useNavigate} from "react-router-dom";
 
 export default function QuoteTable({
                                        quotes,
                                        onEdit,
                                        onDelete
                                    }) {
+
+    const navigate = useNavigate();
 
     return (
 
@@ -125,6 +128,15 @@ export default function QuoteTable({
                                             }
                                         >
                                             Supprimer
+                                        </button>
+
+                                        |
+
+                                        <button
+                                            className="btn btn-xs bg-base-300 text-base-content border-none hover:bg-base-100 rounded-lg"
+                                            onClick={() => navigate(`/quotes/${quote.id}`)}
+                                        >
+                                            Voir
                                         </button>
 
                                     </td>
