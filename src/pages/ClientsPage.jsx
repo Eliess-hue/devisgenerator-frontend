@@ -7,8 +7,8 @@ import {
     deleteClient
 } from '../api/apiClient.js'
 
-import ClientModal from '../components/ClientModal'
-import ClientTable from '../components/ClientTable'
+import ClientModal from '../components/clients/ClientModal.jsx'
+import ClientTable from '../components/clients/ClientTable.jsx'
 
 export default function ClientsPage() {
 

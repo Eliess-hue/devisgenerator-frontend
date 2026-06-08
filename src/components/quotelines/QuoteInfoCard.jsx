@@ -1,4 +1,4 @@
-import QuoteStatusBadge from './QuoteStatusBadge'
+import QuoteStatusBadge from './QuoteStatusBadge.jsx'
 
 export default function QuoteInfoCard({
                                           quote

@@ -7,8 +7,8 @@ import {
 } from "../api/apiQuote.js";
 
 import {getClients} from "../api/apiClient.js";
-import QuoteModal from "../components/QuoteModal.jsx";
-import QuoteTable from "../components/QuoteTable.jsx";
+import QuoteModal from "../components/quotes/QuoteModal.jsx";
+import QuoteTable from "../components/quotes/QuoteTable.jsx";
 
 export default function QuotesPage() {
 

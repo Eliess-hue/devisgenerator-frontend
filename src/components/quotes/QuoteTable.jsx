@@ -1,5 +1,5 @@
 import QuoteStatusBadge
-    from './QuoteStatusBadge'
+    from '../quotelines/QuoteStatusBadge.jsx'
 import {useNavigate} from "react-router-dom";
 
 export default function QuoteTable({

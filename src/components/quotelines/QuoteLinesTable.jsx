@@ -1,4 +1,7 @@
-export default function QuoteLinesTable({lines}) {
+export default function QuoteLinesTable({
+                                            lines,
+                                            onDeleteLine
+                                        }) {
 
     return (
 
@@ -6,7 +9,7 @@ export default function QuoteLinesTable({lines}) {
 
             <div className="card-body">
 
-                <h3 className="font-semibold">
+                <h3 className="font-semibold text-lg">
 
                     Lignes du devis
 
@@ -14,11 +17,15 @@ export default function QuoteLinesTable({lines}) {
 
                 {lines.length === 0 ? (
 
-                    <p className="text-base-content/60">
+                    <div className="py-8 text-center">
 
-                        Aucune ligne
+                        <p className="text-base-content/60">
 
-                    </p>
+                            Aucune ligne dans ce devis.
+
+                        </p>
+
+                    </div>
 
                 ) : (
 
@@ -37,6 +44,8 @@ export default function QuoteLinesTable({lines}) {
                                 <th>Prix unitaire</th>
 
                                 <th>Total</th>
+
+                                <th>Actions</th>
 
                             </tr>
 
@@ -66,6 +75,29 @@ export default function QuoteLinesTable({lines}) {
                                         {Number(
                                             line.total
                                         ).toFixed(2)} €
+                                    </td>
+
+                                    <td>
+
+                                        <button
+                                            className="
+                                                btn
+                                                btn-xs
+                                                bg-red-950
+                                                text-red-300
+                                                border-none
+                                                hover:bg-red-900
+                                                rounded-lg
+                                            "
+                                            onClick={() =>
+                                                onDeleteLine(
+                                                    line.id
+                                                )
+                                            }
+                                        >
+                                            Supprimer
+                                        </button>
+
                                     </td>
 
                                 </tr>

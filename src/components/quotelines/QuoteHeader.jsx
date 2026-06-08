@@ -1,7 +1,8 @@
-import QuoteStatusBadge from './QuoteStatusBadge'
+import QuoteStatusBadge from './QuoteStatusBadge.jsx'
 
 export default function QuoteHeader({
-                                        quote
+                                        quote,
+                                        onAddLine
                                     }) {
 
     return (
@@ -23,6 +24,17 @@ export default function QuoteHeader({
             </div>
 
             <div className="flex gap-3">
+
+                <button
+                    className="
+                        btn
+                        btn-primary
+                        rounded-lg
+                    "
+                    onClick={onAddLine}
+                >
+                    + Nouvelle ligne
+                </button>
 
                 <button
                     className="
